@@ -19,5 +19,5 @@ const { data: posts } = await useAsyncData("posts", () =>
 </script>
 
 <style lang="scss">
-/* Здесь можно добавить стили для главной страницы */
+
 </style>
