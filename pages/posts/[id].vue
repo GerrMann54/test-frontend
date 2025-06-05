@@ -4,9 +4,15 @@
         <img :src="post.image" alt="Post Image" />
         <p>{{ post.description }}</p>
         <div v-html="post.body"></div>
-        <nuxt-link to="/posts">Назад к всем постам</nuxt-link>
-        <nuxt-link :to="`/posts/edit/${postId}`">Редактировать пост</nuxt-link>
-        <button @click="showModal = true">Удалить пост</button>
+        <ul>
+            <li><nuxt-link to="/posts">Назад к всем постам</nuxt-link></li>
+            <li>
+                <nuxt-link :to="`/posts/edit/${postId}`"
+                    >Редактировать пост</nuxt-link
+                >
+            </li>
+            <li><button @click="showModal = true">Удалить пост</button></li>
+        </ul>
 
         <div v-if="showModal" class="modal">
             <div class="modal-content">

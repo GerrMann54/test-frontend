@@ -3,9 +3,11 @@
         <header>
             <h1>Nuxt App</h1>
             <nav>
-                <nuxt-link to="/">Главная</nuxt-link>
-                <nuxt-link to="/posts">Все посты</nuxt-link>
-                <nuxt-link to="/posts/add">Новый пост</nuxt-link>
+                <ul>
+                    <li><nuxt-link to="/">Главная</nuxt-link></li>
+                    <li><nuxt-link to="/posts">Все посты</nuxt-link></li>
+                    <li><nuxt-link to="/posts/add">Новый пост</nuxt-link></li>
+                </ul>
             </nav>
         </header>
         <NuxtPage />
