@@ -10,7 +10,16 @@
 </template>
 
 <script setup>
-defineProps(["posts"]);
+import { useAsyncData } from "nuxt/app";
+
+const props = defineProps({
+    url: {
+        type: String,
+        required: true,
+    },
+});
+
+const { data: posts } = await useAsyncData("posts", () => $fetch(props.url));
 </script>
 
-<style scoped></style>
+<style lang="scss"></style>

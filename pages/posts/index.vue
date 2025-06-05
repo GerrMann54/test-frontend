@@ -1,16 +1,10 @@
 <template>
     <div>
         <h1>Все посты</h1>
-        <PostList :posts="posts" />
+        <PostList url="http://localhost:3001/posts" />
     </div>
 </template>
 
-<script setup>
-import { useAsyncData } from "nuxt/app";
-
-const { data: posts } = await useAsyncData("posts", () =>
-    $fetch("http://localhost:3001/posts"),
-);
-</script>
+<script setup></script>
 
 <style lang="scss"></style>
