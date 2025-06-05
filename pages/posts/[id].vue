@@ -5,6 +5,7 @@
         <p>{{ post.description }}</p>
         <div v-html="post.body"></div>
         <nuxt-link to="/posts">Назад к всем постам</nuxt-link>
+        <nuxt-link :to="`/posts/edit/${postId}`">Редактировать пост</nuxt-link>
         <button @click="showModal = true">Удалить пост</button>
 
         <div v-if="showModal" class="modal">
