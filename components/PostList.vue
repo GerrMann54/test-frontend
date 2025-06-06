@@ -11,6 +11,7 @@
 
 <script setup>
 import { useAsyncData } from "nuxt/app";
+import { ref, watch } from "vue";
 
 const props = defineProps({
     url: {
@@ -19,7 +20,15 @@ const props = defineProps({
     },
 });
 
-const { data: posts } = await useAsyncData("posts", () => $fetch(props.url));
+const url = ref(props.url);
+
+const { data: posts } = await useAsyncData(
+    `posts-${url.value}`,
+    () => $fetch(url.value),
+    {
+        watch: [url],
+    },
+);
 </script>
 
 <style lang="scss"></style>
