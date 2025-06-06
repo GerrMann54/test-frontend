@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Главная страница</h1>
+    <div class="main-container">
+        <h1 class="main-title">Главная страница</h1>
         <PostList
             url="http://localhost:3001/posts?_sort=-id&_order=desc&_limit=3"
         />
@@ -15,4 +15,16 @@ title.value = "Главная страница";
 desc.value = "Описание страницы";
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.main-container {
+    padding: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #a8e600;
+}
+</style>

@@ -1,26 +1,46 @@
 <template>
-    <div>
-        <h1>Редактировать пост</h1>
-        <form @submit.prevent="updatePost">
-            <div>
-                <label for="title">Заголовок:</label>
-                <input type="text" v-model="post.title" required />
+    <div class="create-post-page">
+        <h1 class="page-title">Редактировать пост</h1>
+        <form @submit.prevent="updatePost" class="post-form">
+            <div class="form-group">
+                <label for="title" class="form-label">Заголовок:</label>
+                <input
+                    type="text"
+                    v-model="post.title"
+                    required
+                    class="form-input"
+                />
             </div>
-            <div>
-                <label for="image">Ссылка на изображение:</label>
-                <input type="text" v-model="post.image" required />
+            <div class="form-group">
+                <label for="image" class="form-label"
+                    >Ссылка на изображение:</label
+                >
+                <input
+                    type="text"
+                    v-model="post.image"
+                    required
+                    class="form-input"
+                />
             </div>
-            <div>
-                <label for="description">Описание:</label>
-                <textarea v-model="post.description" required></textarea>
+            <div class="form-group">
+                <label for="description" class="form-label">Описание:</label>
+                <textarea
+                    v-model="post.description"
+                    required
+                    class="form-textarea"
+                ></textarea>
             </div>
-            <div>
-                <label for="body">Содержимое:</label>
-                <textarea v-model="post.body" required></textarea>
+            <div class="form-group">
+                <label for="body" class="form-label">Содержимое:</label>
+                <textarea
+                    v-model="post.body"
+                    required
+                    class="form-textarea"
+                ></textarea>
             </div>
-            <button type="submit">Сохранить изменения</button>
+            <button type="submit" class="submit-button">Сохранить</button>
         </form>
-        <nuxt-link to="/posts">Назад к всем постам</nuxt-link>
+        <nuxt-link to="/posts" class="back-link">Назад к всем постам</nuxt-link>
     </div>
 </template>
 

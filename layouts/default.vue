@@ -42,4 +42,56 @@ useHead({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+$app-bg-color: #121212; // Темный фон
+$app-text-color: #e0e0e0; // Светлый текст
+$app-accent-color: #a8e600; // Ярко-лаймовый акцент
+
+.app-container {
+    background-color: $app-bg-color;
+    color: $app-text-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.app-header {
+    background-color: darken($app-bg-color, 5%);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.app-nav {
+    .nav-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-item {
+        a {
+            color: $app-accent-color;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: lighten($app-accent-color, 10%);
+            }
+        }
+    }
+}
+
+NuxtPage {
+    flex: 1;
+    padding: 20px;
+}
+</style>
