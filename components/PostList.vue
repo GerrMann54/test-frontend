@@ -11,7 +11,7 @@
 
 <script setup>
 import { useAsyncData } from "nuxt/app";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 
 const props = defineProps({
     url: {

@@ -25,7 +25,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useAsyncData } from "nuxt/app";
 
@@ -43,7 +42,7 @@ const updatePost = async () => {
             method: "PUT",
             body: post.value,
         });
-        router.push("/posts");
+        router.push(`/posts/${postId}`);
     } catch (error) {
         console.error("Ошибка при обновлении поста:", error);
     }
