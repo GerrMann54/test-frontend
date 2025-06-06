@@ -2,7 +2,8 @@
     <div>
         <h1>{{ post.title }}</h1>
         <img :src="post.image" alt="Post Image" />
-        <p>{{ post.description }}</p>
+        <!-- <p>{{ post.description }}</p> -->
+        <!-- Удалено, описание переехало в meta desc -->
         <div v-html="post.body"></div>
         <ul>
             <li><nuxt-link to="/posts">Назад к всем постам</nuxt-link></li>
@@ -29,6 +30,7 @@
 import { useAsyncData } from "nuxt/app";
 import { useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
+import { inject } from "vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -37,6 +39,12 @@ const postId = route.params.id;
 const { data: post } = await useAsyncData("post", () =>
     $fetch(`http://localhost:3001/posts/${postId}`),
 );
+
+const title = inject("metaTitle");
+const desc = inject("metaDesc");
+title.value = post.value.title;
+desc.value = post.value.description;
+console.log(post);
 
 const showModal = ref(false);
 

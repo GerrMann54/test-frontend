@@ -5,6 +5,12 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { inject } from "vue";
+const title = inject("metaTitle");
+const desc = inject("metaDesc");
+title.value = "Все посты";
+desc.value = "Описание";
+</script>
 
 <style lang="scss"></style>

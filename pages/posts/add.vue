@@ -35,6 +35,12 @@ const post = ref({
     body: "",
 });
 
+import { inject } from "vue";
+const title = inject("metaTitle");
+const desc = inject("metaDesc");
+title.value = "Новый пост";
+desc.value = "Описание страницы";
+
 const router = useRouter();
 
 const createPost = async () => {

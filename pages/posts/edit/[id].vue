@@ -36,6 +36,12 @@ const { data: post } = await useAsyncData("post", () =>
     $fetch(`http://localhost:3001/posts/${postId}`),
 );
 
+const title = inject("metaTitle");
+const desc = inject("metaDesc");
+title.value = post.value.title;
+desc.value = post.value.description;
+console.log(post);
+
 const updatePost = async () => {
     try {
         await $fetch(`http://localhost:3001/posts/${postId}`, {

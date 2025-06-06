@@ -7,6 +7,12 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { inject } from "vue";
+const title = inject("metaTitle");
+const desc = inject("metaDesc");
+title.value = "Главная страница";
+desc.value = "Описание страницы";
+</script>
 
 <style lang="scss"></style>
